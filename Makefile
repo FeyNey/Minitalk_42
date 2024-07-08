@@ -2,7 +2,7 @@ CC	=	cc
 
 CFLAGS	=	-Wall -Wextra -Werror
 
-NAME_SERVER	=	server
+NAME_SERVER	=	serveur
 NAME_CLIENT	=	client
 
 SRC_SERVEUR	=	serveur.c\

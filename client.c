@@ -6,7 +6,7 @@
 /*   By: acoste <acoste@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 18:26:40 by acoste            #+#    #+#             */
-/*   Updated: 2024/07/04 20:25:06 by acoste           ###   ########.fr       */
+/*   Updated: 2024/07/07 21:41:42 by acoste           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,22 @@ void	send_bit(int pid, char c, int index)
 	if (kill(pid, signal) == -1)
 		ft_errorhandle(8);
 }
-//send les bytes de gauches a droite
+/*
+	send les bytes de gauches a droite -> fonction kill, avec le pid du serveur
+	de le code du bit correspondant au characteres (binaire)
+	SIGUSR1 = 1, SIGUSR2 = 0
+*/
 
 void	signal_handler1(int sig)
 {
 	(void)sig;
 	g_sw = 1;
 }
-// le serveur envoie un signal SIGUSER1, on l'interprete;
-//comme s'il disais j'ai recu un bit;
+
+/*
+ le serveur envoie un signal SIGUSER1, on l'interprete;
+comme s'il disais j'ai recu un bit;
+*/
 
 void	signal_handler2(int sig)
 {
@@ -44,8 +51,10 @@ void	signal_handler2(int sig)
 	exit(EXIT_SUCCESS);
 }
 
-// le serveur envoie un signal SIGUSR2, on l'interprete;
-// comme : Le message entier a ete recu;
+/*
+ le serveur envoie un signal SIGUSR2, on l'interprete;
+ comme : Le message entier a ete recu;
+*/
 
 void	send_message(int pid, char *str)
 {
@@ -76,6 +85,14 @@ void	send_message(int pid, char *str)
 	}
 }
 
+/*
+	envoie du message bit par bit avec la fonction send bit,
+	attente de la reception d'un signal de retour SIGUSR1 de la part du serveur
+	signifiant qu'il a bien recu le bit et que l'on peut envoyer la suite
+	permet la syncronisation serveur / client
+*/
+
+
 int	main(int argc, char **argv)
 {
 	pid_t	pid;
@@ -87,3 +104,9 @@ int	main(int argc, char **argv)
 	send_message(pid, argv[2]);
 	return (0);
 }
+
+/*
+	check des arguments, traitement du pid (char -> int via atoi)
+	definission du comportement des signaux SIGUSR1 et SIGUSR2 en reception
+	Envoie du message argv[2]
+*/

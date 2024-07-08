@@ -6,7 +6,7 @@
 /*   By: acoste <acoste@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 19:48:13 by acoste            #+#    #+#             */
-/*   Updated: 2024/07/05 10:35:18 by acoste           ###   ########.fr       */
+/*   Updated: 2024/07/07 21:03:53 by acoste           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,8 @@ void	ft_errorhandle(int c)
 	exit(EXIT_FAILURE);
 }
 /*
-	Gestion des erreurs via un code c donne en argument
+	Gestion des erreurs via un code c donné en argument
 */
-
 
 int	ft_checkargs(int argc)
 {
@@ -68,7 +67,7 @@ int	ft_checkargs(int argc)
 }
 
 /*
-	Verification des arguments passe en parametre
+	Verification des arguments passé en parametre
 */
 
 int	ft_atoi(char *str)

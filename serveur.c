@@ -6,7 +6,7 @@
 /*   By: acoste <acoste@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 18:26:32 by acoste            #+#    #+#             */
-/*   Updated: 2024/07/05 10:30:09 by acoste           ###   ########.fr       */
+/*   Updated: 2024/07/07 21:41:43 by acoste           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ void	ft_buffer(char **buffer, char c, int *len)
 	buffer stockant les caracteres arrivant au fur et a mesure
 	en changeant de buffer a chaque fois pour augmenter la taille du msg
 */
-
 
 void	ft_rcv_msg(char **buffer, int *msglen)
 {
