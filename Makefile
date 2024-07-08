@@ -2,20 +2,20 @@ CC	=	cc
 
 CFLAGS	=	-Wall -Wextra -Werror
 
-NAME_SERVER	=	serveur
+NAME_SERVER	=	server
 NAME_CLIENT	=	client
 
-SRC_SERVEUR	=	server.c\
+SRC_SERVER	=	server.c\
 					utils.c
 
 SRC_CLIENT	=	client.c\
 				utils.c
 
 # SRC_BONUS	=	client_bonus.c\
-# 				serveur_bonus.c\
+# 				server_bonus.c\
 # 				utils_bonus.c
 
-OBJ_SERVER	=	$(SRC_SERVEUR:.c=.o)
+OBJ_SERVER	=	$(SRC_SERVER:.c=.o)
 OBJ_CLIENT	=	$(SRC_CLIENT:.c=.o)
 
 # OBJ_BONUS	=	$(SRC_BONUS:_bonus.c=_bonus.o)
