@@ -5,7 +5,7 @@ CFLAGS	=	-Wall -Wextra -Werror
 NAME_SERVER	=	serveur
 NAME_CLIENT	=	client
 
-SRC_SERVEUR	=	serveur.c\
+SRC_SERVEUR	=	server.c\
 					utils.c
 
 SRC_CLIENT	=	client.c\
