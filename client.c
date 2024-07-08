@@ -92,7 +92,6 @@ void	send_message(int pid, char *str)
 	permet la syncronisation serveur / client
 */
 
-
 int	main(int argc, char **argv)
 {
 	pid_t	pid;
